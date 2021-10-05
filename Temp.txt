@@ -1,0 +1,105 @@
+switch (*service)
+                    {                     
+                        case 0:                                                  
+                            fprintf(file,"Tipo de servicio -> rutina\n");
+                        break;
+                        case 1:                      
+                            fprintf(file,"Tipo de servicio -> prioritario\n");
+                        break;
+                        case 2:     
+                            fprintf(file,"Tipo de servicio -> inmediato\n");
+                        break;
+                        case 3:
+                            fprintf(file,"Tipo de servicio -> relampago (flash)\n");
+                        break;
+                        case 4: 
+                            fprintf(file,"Tipo de servicio -> invalidacion relampago (flash override)\n");
+                        break;
+                        case 5:
+                            fprintf(file,"Tipo de servicio -> critico\n");
+                        break;
+                        case 6:
+                            fprintf(file,"Tipo de servicio -> control de interred\n");
+                        break;
+                        case 7:
+                            fprintf(file,"Tipo de servicio -> control de red\n");
+                        break;
+                    }
+
+
+                    if (*service==0)
+                    {
+                        fprintf(file,"Tipo de servicio -> rutina\n");
+                    }else{
+                        if (*service==1)
+                        {
+                            fprintf(file,"Tipo de servicio -> prioritario\n");
+                        }else{
+                            if (*service==2)
+                            {
+                                fprintf(file,"Tipo de servicio -> inmediato\n");
+                            }else{
+                                if (*service==3)
+                                {
+                                    fprintf(file,"Tipo de servicio -> relampago (flash)\n");
+                                }else{
+                                    if (*service==4)
+                                    {
+                                        fprintf(file,"Tipo de servicio -> invalidacion relampago (flash override)\n");
+                                    }else{
+                                        if (*service==5)
+                                        {
+                                            fprintf(file,"Tipo de servicio -> critico\n");
+                                        }else{
+                                            if (*service==6)
+                                            {
+                                                fprintf(file,"Tipo de servicio -> control de interred\n");
+                                            }else{
+                                                if (*service==7)
+                                                {
+                                                    fprintf(file,"Tipo de servicio -> control de red\n");
+                                                }}}}}}}}                    
+
+
+
+
+
+
+
+
+switch (prot)
+                    {
+                        case 1:
+                            ICMPv4++;
+                            //unsigned cambia la forma del rango de la variable
+                            fprintf(file, "Protocolo de capa superior -> 0x%.2X | ICMPv4\n", (unsigned int)ip_hdr->protocol);
+                        break;
+                        case 2:
+                            IGMP++;
+                            fprintf(file, "Protocolo de capa superior -> 0x%.2X | ICMPv4\n", (unsigned int)ip_hdr->protocol);
+                        break;
+                        case 4:
+                            IP++;
+                            fprintf(file, "Protocolo de capa superior -> 0x%.2X | IP\n", (unsigned int)ip_hdr->protocol);
+                        break;
+                        case 6:
+                            TCP++;
+                            fprintf(file, "Protocolo de capa superior -> 0x%.2X | TCP\n", (unsigned int)ip_hdr->protocol);
+                        break;
+                        case 11:
+                            UDP++;                  
+                            fprintf(file, "Protocolo de capa superior -> 0x%.2X | UDP\n", (unsigned int)ip_hdr->protocol);
+                        break;
+                        case 29:
+                            IPv6++;
+                            fprintf(file, "Protocolo de capa superior -> 0x%.2X | IPv6\n", (unsigned int)ip_hdr->protocol);
+                        break;
+                        case 59:
+                            OSPF++;                       
+                            fprintf(file, "Protocolo de capa superior -> 0x%.2X | OSPF\n", (unsigned int)ip_hdr->protocol);
+                        break;
+                        default:
+                            OTHER++;                
+                            fprintf(file, "Protocolo de capa superior -> 0x%.2X | OTHER\n", (unsigned int)ip_hdr->protocol);
+                        break;
+                    }
